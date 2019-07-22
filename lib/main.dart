@@ -35,7 +35,7 @@ class MyHomeState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: ListView.builder(
-        itemCount: 10,
+        itemCount: 30,
         itemBuilder: (context, index) {
           return Container(
             padding: EdgeInsets.all(2.0),
@@ -48,9 +48,25 @@ class MyHomeState extends State<MyHomePage> {
                   flex: 3,
                 ),
                 Expanded(
-                  child: Container(
-                    color: Colors.blue,
-                    child: Text('b'),
+                  child: Container(                    
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: <Widget>[
+                        Text('title'),
+                        Text('content'),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: <Widget>[
+                            RaisedButton(
+                              child: Text('button1'),
+                            ),
+                            RaisedButton(
+                              child: Text('button2'),
+                            ),
+                          ],
+                        )
+                      ],
+                    ),
                   ),
                   flex: 7,
                 )
