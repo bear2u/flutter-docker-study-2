@@ -19,7 +19,9 @@ class Bloc {
       list.add(item);
     }    
     print('item list : $list');
-    _items.sink.add(list);
+    Future.delayed(Duration(milliseconds: 100), () {
+      _items.sink.add(list);
+    });    
   }
 
   dispose() {

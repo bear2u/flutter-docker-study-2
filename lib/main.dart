@@ -46,7 +46,7 @@ class MyHomeState extends State<MyHomePage> {
         stream: bloc.items,
         builder: (context, snapshot) {
           final list = snapshot.data ?? [];
-          print('list => $list');
+          print('list => $list, snapshot state => ${snapshot.connectionState}');
           return ListView.builder(
             itemCount: list.length,
             itemBuilder: (context, index) {
