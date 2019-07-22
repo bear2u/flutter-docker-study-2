@@ -4,19 +4,22 @@ import 'item.dart';
 
 class Bloc {
   // Input
-  final _items = PublishSubject<Item>();
+  final _items = PublishSubject<List<Item>>();
 
   // Output
-  get items => _items.stream;
+  Stream<List<Item>> get items => _items.stream;
 
   fetchItems() {
+    List<Item> list = [];
     for(var i = 0;i<20;i++) {
       Item item = Item(
         title: 'title$i',
         content: 'content$i',        
       );
-      _items.sink.add(item);
+      list.add(item);
     }    
+    print('item list : $list');
+    _items.sink.add(list);
   }
 
   dispose() {
