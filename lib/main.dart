@@ -38,22 +38,21 @@ class MyHomeState extends State<MyHomePage> {
         itemCount: 10,
         itemBuilder: (context, index) {
           return Container(
-            height: 50.0,
+            padding: EdgeInsets.all(2.0),
+            height: 100.0,
             child: Row(
+              crossAxisAlignment: CrossAxisAlignment.stretch,
               children: <Widget>[
                 Expanded(
-                  child: Container(
-                    color: Colors.red,
-                    child: Text('a'),
-                  ),
-                  flex: 2,
+                  child: Image.asset("assets/images/item1.png"),
+                  flex: 3,
                 ),
                 Expanded(
                   child: Container(
                     color: Colors.blue,
                     child: Text('b'),
                   ),
-                  flex: 8,
+                  flex: 7,
                 )
               ],
             ),
