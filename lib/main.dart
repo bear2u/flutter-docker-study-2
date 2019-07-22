@@ -50,6 +50,7 @@ class MyHomeState extends State<MyHomePage> {
           return ListView.builder(
             itemCount: list.length,
             itemBuilder: (context, index) {
+              final item = list[index];
               return Container(
                 padding: EdgeInsets.all(2.0),
                 height: 100.0,
@@ -65,8 +66,8 @@ class MyHomeState extends State<MyHomePage> {
                         child: Column(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: <Widget>[
-                            Text('title'),
-                            Text('content'),
+                            Text(item.title),
+                            Text(item.content),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: <Widget>[
